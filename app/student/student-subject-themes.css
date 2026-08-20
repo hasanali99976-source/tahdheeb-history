@@ -1,1 +1,23 @@
-/* أزيلت جميع التصاميم مؤقتًا. */
+.student-clean{--subject-primary:#1768c5;--subject-deep:#123f63;--subject-soft:#eef6ff;--subject-glow:#72b7ea;background:linear-gradient(145deg,var(--subject-soft),#f8fafc 42%)}
+.student-clean[data-subject="history"]{--subject-primary:#a66b2b;--subject-deep:#5f3b1e;--subject-soft:#f6ead9;--subject-glow:#d9a45f}
+.student-clean[data-subject="geography"]{--subject-primary:#16845d;--subject-deep:#135b46;--subject-soft:#e4f5ed;--subject-glow:#54c492}
+.student-clean[data-subject="social-studies"],.student-clean[data-subject="social-sciences"],.student-clean[data-subject="citizenship"]{--subject-primary:#b25b34;--subject-deep:#71391f;--subject-soft:#faece4;--subject-glow:#e69a73}
+.student-clean[data-subject="critical-thinking"]{--subject-primary:#7353c7;--subject-deep:#403078;--subject-soft:#eee9fb;--subject-glow:#a991ec}
+.student-clean[data-subject="arabic"],.student-clean[data-subject="linguistic-competencies"]{--subject-primary:#b44670;--subject-deep:#702844;--subject-soft:#fae8ef;--subject-glow:#df86a7}
+.student-clean[data-subject="english"]{--subject-primary:#285fbd;--subject-deep:#1b407b;--subject-soft:#e8effc;--subject-glow:#75a0e8}
+.student-clean[data-subject="mathematics"],.student-clean[data-subject="financial-literacy"]{--subject-primary:#315fc8;--subject-deep:#213f83;--subject-soft:#e9effd;--subject-glow:#789ae3}
+.student-clean[data-subject="science"],.student-clean[data-subject="earth-science"],.student-clean[data-subject="environmental-science"]{--subject-primary:#078c91;--subject-deep:#07595d;--subject-soft:#e2f5f5;--subject-glow:#54c5c3}
+.student-clean[data-subject="physics"]{--subject-primary:#3955a6;--subject-deep:#263769;--subject-soft:#e9edfa;--subject-glow:#8195d6}
+.student-clean[data-subject="chemistry"]{--subject-primary:#087e9e;--subject-deep:#07556a;--subject-soft:#e2f3f7;--subject-glow:#54b9ce}
+.student-clean[data-subject="biology"]{--subject-primary:#3d8d43;--subject-deep:#285c2c;--subject-soft:#e9f5e9;--subject-glow:#81c77f}
+.student-clean[data-subject="digital-technology"],.student-clean[data-subject="computer-science"]{--subject-primary:#0875a5;--subject-deep:#064d6d;--subject-soft:#e2f2f8;--subject-glow:#4db3d8}
+.student-clean[data-subject="islamic-studies"],.student-clean[data-subject="quran"],.student-clean[data-subject="quran-tafsir"],.student-clean[data-subject="tafsir"],.student-clean[data-subject="hadith"],.student-clean[data-subject="fiqh"],.student-clean[data-subject="tawhid"]{--subject-primary:#16805f;--subject-deep:#105a43;--subject-soft:#e5f4ed;--subject-glow:#56bb92}
+.student-clean[data-subject="art"],.student-clean[data-subject="arts"]{--subject-primary:#d35b43;--subject-deep:#843725;--subject-soft:#fbe9e5;--subject-glow:#ee987e}
+.student-clean[data-subject="physical-education"],.student-clean[data-subject="fitness-health"],.student-clean[data-subject="health-education"]{--subject-primary:#df7a21;--subject-deep:#8c4b14;--subject-soft:#fff0df;--subject-glow:#f1ab67}
+.student-clean[data-subject="life-skills"],.student-clean[data-subject="family-education"],.student-clean[data-subject="career-guidance"]{--subject-primary:#b06a32;--subject-deep:#70421f;--subject-soft:#f7ecdf;--subject-glow:#dba06a}
+.student-clean[data-subject="business-administration"]{--subject-primary:#4f657b;--subject-deep:#304254;--subject-soft:#e9eef3;--subject-glow:#8ba1b5}
+.student-clean .student-identity-head{background:linear-gradient(125deg,var(--subject-deep),var(--subject-primary));box-shadow:0 14px 34px color-mix(in srgb,var(--subject-primary) 24%,transparent)}
+.student-clean .student-score-ring{background:radial-gradient(circle at center,#fff 58%,transparent 59%),conic-gradient(var(--subject-primary) calc(var(--score)*1%),#e5edf2 0)}
+.student-clean .student-main-summary,.student-clean .student-home-grid article,.student-clean .student-goal-panel,.student-clean .student-ai-hub{border-color:color-mix(in srgb,var(--subject-primary) 18%,#dce7ef)}
+.student-clean .subject-icon,.student-subject-choices button[data-subject]{transition:transform .18s ease,box-shadow .18s ease}
+.student-subject-choices button[data-subject]:hover{transform:translateY(-3px)}

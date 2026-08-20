@@ -1,0 +1,6 @@
+.teacher-app-shell[data-subject="social-sciences"]{--teacher-accent:#b25b34;--subject-deep:#71391f;--subject-soft:#faece4;--subject-glow:#e69a73}
+.teacher-app-shell[data-subject="environmental-science"]{--teacher-accent:#078c91;--subject-deep:#07595d;--subject-soft:#e2f5f5;--subject-glow:#54c5c3}
+.teacher-app-shell[data-subject="quran-tafsir"]{--teacher-accent:#16805f;--subject-deep:#105a43;--subject-soft:#e5f4ed;--subject-glow:#56bb92}
+.teacher-app-shell[data-subject="arts"]{--teacher-accent:#d35b43;--subject-deep:#843725;--subject-soft:#fbe9e5;--subject-glow:#ee987e}
+.teacher-app-shell[data-subject="fitness-health"]{--teacher-accent:#df7a21;--subject-deep:#8c4b14;--subject-soft:#fff0df;--subject-glow:#f1ab67}
+.teacher-app-shell[data-subject="linguistic-competencies"]{--teacher-accent:#b44670;--subject-deep:#702844;--subject-soft:#fae8ef;--subject-glow:#df86a7}

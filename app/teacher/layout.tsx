@@ -12,6 +12,7 @@ import "./print-theme.css";
 import "./teacher-v3.css";
 import "./teacher-navigation-v4.css";
 import "./subject-themes-v5.css";
+import "./subject-theme-aliases.css";
 import "./mobile-card-tables.css";
 
 const tabs = [
