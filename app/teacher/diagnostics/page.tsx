@@ -7,6 +7,7 @@ import { tenantCollection } from "../../../lib/teacher-tenant";
 import type { SubjectKey } from "../../../lib/subject-config";
 import { useTeacherClient } from "../../../lib/teacher-client";
 import AiDiagnosticBuilder from "./ai-diagnostic-builder";
+import DiagnosticResults from "./diagnostic-results";
 import "./diagnostics.css";
 
 type Question = { id: string; text: string; options: string[]; correctIndex: number; skill: string };
@@ -30,6 +31,7 @@ export default function DiagnosticsPage() {
     setTitle(""); setInstructions(""); setQuestions([newQuestion()]); setPlans(emptyPlans); setMessage(published ? "تم نشر الاختبار في بوابة الطالب." : "تم حفظ الاختبار كمسودة.");
   }
   return <main className="diagnostics-page" dir="rtl"><section className="diagnostics-hero"><span>قياس وتشخيص</span><h1>الاختبارات التشخيصية والخطط العلاجية</h1><p>أنشئ اختبارًا للمادة الحالية، وحدد المهارة لكل سؤال، وستُقترح للطالب خطة مناسبة وفق نتيجته.</p></section>
+    {session?.teacherId && session.subjectKey ? <DiagnosticResults teacherId={session.teacherId} subjectKey={session.subjectKey as SubjectKey} subjectName={session.subject || "المادة"} diagnostics={items.map(item => ({ id: item.id, title: item.title }))} /> : null}
     <AiDiagnosticBuilder subjectId={session.subjectKey || ""} subjectName={session.subject || "المادة"} onGenerated={useGenerated} onMessage={setMessage} />
     <section id="manual-diagnostic-editor" className="diagnostic-builder"><header><div><h2>اختبار جديد</h2><p>الطالب يرى الاختبارات المنشورة فقط.</p></div></header><label>عنوان الاختبار<input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="الاختبار التشخيصي الأول" /></label><label>تعليمات الطالب<textarea value={instructions} onChange={(event) => setInstructions(event.target.value)} placeholder="اختر الإجابة الصحيحة لكل سؤال" /></label>
       <div className="questions-editor">{questions.map((question, index) => <article key={question.id}><header><strong>السؤال {index + 1}</strong>{questions.length > 1 && <button onClick={() => setQuestions((current) => current.filter((item) => item.id !== question.id))}>حذف</button>}</header><input value={question.text} onChange={(event) => updateQuestion(question.id, { text: event.target.value })} placeholder="نص السؤال" /><input value={question.skill} onChange={(event) => updateQuestion(question.id, { skill: event.target.value })} placeholder="المهارة التي يقيسها السؤال" />{question.options.map((option, optionIndex) => <label className="answer-option" key={optionIndex}><input type="radio" name={`correct-${question.id}`} checked={question.correctIndex === optionIndex} onChange={() => updateQuestion(question.id, { correctIndex: optionIndex })} /><input value={option} onChange={(event) => { const options = [...question.options]; options[optionIndex] = event.target.value; updateQuestion(question.id, { options }); }} placeholder={`الخيار ${optionIndex + 1}`} /></label>)}</article>)}</div><button className="add-question" onClick={() => setQuestions((current) => [...current, newQuestion()])}>+ إضافة سؤال</button>

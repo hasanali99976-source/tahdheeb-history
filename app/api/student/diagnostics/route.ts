@@ -26,7 +26,7 @@ export async function GET(request: Request) {
       questionCount: Array.isArray(data.questions) ? data.questions.length : 0,
       questions: result ? [] : (data.questions || []).map((question: Record<string, unknown>) => ({ id: question.id, text: question.text, options: question.options, skill: question.skill || "" })),
       completed: !!result,
-      result: result ? { score: result.score, total: result.total, percentage: result.percentage, plan: result.plan, weakSkills: result.weakSkills || [] } : null,
+      result: result ? { score: result.score, total: result.total, percentage: result.percentage, plan: result.teacherPlan || result.plan, weakSkills: result.weakSkills || [] } : null,
     };
   });
   return NextResponse.json({ ok: true, diagnostics });
